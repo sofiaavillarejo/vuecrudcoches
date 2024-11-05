@@ -18,14 +18,13 @@ export default {
       title: '¿Estás seguro?',
       text: "¡Este coche se eliminará permanentemente!",
       icon: 'warning',
-      showCancelButton: true,  // Muestra el botón de cancelar
-      confirmButtonColor: '#d33',  // Color del botón de confirmar
-      cancelButtonColor: '#3085d6',  // Color del botón de cancelar
+      showCancelButton: true,
+      confirmButtonColor: '#d33',  
+      cancelButtonColor: '#3085d6',  
       confirmButtonText: 'Sí, eliminarlo',
       cancelButtonText: 'No, cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        // Si el usuario confirma, procedemos con la eliminación
         service.deleteCoche(id).then(response => {
           console.log(response);
           Swal.fire(
